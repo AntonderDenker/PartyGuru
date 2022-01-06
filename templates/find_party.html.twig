@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+{% block title %} Party finden! {% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/find_party.css") }}">
+{% endblock %}
+
+{% block body %}
+<main style="background-image: url({{ asset("img/find_party_bg.jpg") }})">
+    {% include "global_elements/nav.html.twig" %}
+
+    <div class="container">
+        <div class="text-center">
+            <h2 class="text-center rounded text-light mt-5 d-inline-block bg-primary p-3 fw-bold">Party finden</h2>
+
+            <div class="parties text-center mt-5">
+                <div class="card party" style="width: 18rem;">
+                    <img src="{{ asset("img/example_1.jpg") }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Party #1</h5>
+                        <p class="card-text">Example desc.</p>
+                        <a href="#" class="btn btn-primary">Party besuchen</a>
+                    </div>
+                </div>
+
+                <div class="card party" style="width: 18rem;">
+                    <img src="{{ asset("img/example_2.jpg") }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Party #2</h5>
+                        <p class="card-text">Example desc.</p>
+                        <a href="#" class="btn btn-primary">Party besuchen</a>
+                    </div>
+                </div>
+
+                <div class="card party" style="width: 18rem;">
+                    <img src="{{ asset("img/example_3.jpg") }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Party #3</h5>
+                        <p class="card-text">Example desc.</p>
+                        <a href="#" class="btn btn-primary">Party besuchen</a>
+                    </div>
+                </div>
+
+                <div class="card party" style="width: 18rem;">
+                    <img src="{{ asset("img/example_4.jpg") }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Party #4</h5>
+                        <p class="card-text">Example desc.</p>
+                        <a href="#" class="btn btn-primary">Party besuchen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+    {% include "global_elements/footer.html.twig" %}
+{% endblock %}

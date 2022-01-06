@@ -1,0 +1,188 @@
+{% extends "base.html.twig" %}
+{% block title %} Party erstellen! {% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/create_party.css") }}">
+{% endblock %}
+
+{% block body %}
+<main style="background-image: url({{ asset("img/create_party_bg.jpg") }})">
+    {% include "global_elements/nav.html.twig" %}
+    <div class="container">
+        <div class="text-center">
+            <h2 class="text-center rounded text-light mt-5 d-inline-block bg-success p-3 fw-bold">Party erstellen</h2>
+        </div>
+        <form>
+            <div class="accordion" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Gäste
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne"
+                         data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group mb-3">
+                                        <label for="guest_amount">Gastanzahl</label>
+                                        <input type="number" min="0" class="form-control mt-2" id="guest_amount">
+                                        <div id="amount_help" class="form-text">Anzahl der <b>maximal</b> zugelassenen
+                                            Gäste.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="guest_list">Gästeliste</label>
+
+                                        <textarea rows="6" class="form-control mt-2" id="guest_list"
+                                                  placeholder="e.g. anton.hfe, jette.sn, n_i_na__"></textarea>
+                                        <div class="form-text">Im Vorfeld eingeladene Gäste.</div>
+                                    </div>
+                                    <select class="form-select mt-3" aria-label="Default select example">
+                                        <option selected>Verifikation der Gäste</option>
+                                        <option value="instagram">Instagram</option>
+                                    </select>
+                                    <div class="form-text">
+                                        Über welche ID können sich Gäste verifizieren und eintragen.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Adresse und Datum
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                         data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-2">
+                                    <div class="form-floating">
+                                        <input class="form-control" type="number" placeholder="200" id="zip_code">
+                                        <label for="zip_code">Postleitzahl</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-floating">
+                                        <input class="form-control" type="text" placeholder="Ort" id="location">
+                                        <label for="location">Wohnort</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-floating">
+                                        <input class="form-control" type="text" placeholder="Straße" id="street">
+                                        <label for="street">Straße</label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-floating">
+                                        <input class="form-control" type="number" placeholder="0" id="number">
+                                        <label for="number">Nummer</label>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <label for="date">Datum</label>
+                                    <input class="form-control mt-2" id="date" type="date">
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label for="start_time">Anfang</label>
+                                        <input class="form-control mt-2" id="start_time" type="time">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label for="end_time">Ende</label>
+                                        <input class="form-control mt-2" id="end_time" type="time">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                            Zusatzinformationen
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                         data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="music" placeholder="Musik">
+                                        <label for="music">Musikgenre</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="theme" placeholder="Motto">
+                                        <label for="theme">Motto</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-3">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="free_alc">
+                                        <label class="form-check-label" for="free_alc">Freier Alkohol</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="chargable_alc">
+                                        <label class="form-check-label" for="chargable_alc">Kostenpflichtiger Alkohol</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="self_alc">
+                                        <label class="form-check-label" for="self_alc">Alkohol selbst mitbringen</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-floating">
+                                        <div class="input-group mb-3">
+                                            <input type="number" placeholder="Eintritt" id="admission" class="form-control" aria-describedby="price-addon">
+                                            <span class="input-group-text" id="price-addon">€</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="addition">Weitere Informationen</label>
+                                <textarea class="form-control mt-3" id="addition" rows="6"></textarea>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+</main>
+
+    {% include "global_elements/footer.html.twig" %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+{% endblock %}

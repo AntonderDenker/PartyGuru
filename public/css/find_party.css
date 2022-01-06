@@ -1,0 +1,13 @@
+.parties
+{
+    padding: 25px;
+    background-color: rgba(0,0,0,0.75);
+    overflow: scroll;
+    height: 60vh;
+}
+
+.party
+{
+    display: inline-block;
+    margin: 25px;
+}

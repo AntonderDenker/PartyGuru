@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+{% block title %}Impressum{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/impressum.css") }}">
+{% endblock %}
+
+{% block body %}
+    <main style="background-image: url({{ asset("img/impressum_bg.jpg") }})">
+        {% include "global_elements/nav.html.twig" %}
+        <div class="container mt-5">
+            <div class="bg-light text-dark p-5">
+               In Arbeit...
+            </div>
+        </div>
+    </main>
+    {% include "global_elements/footer.html.twig" %}
+{% endblock %}

@@ -1,0 +1,70 @@
+.slogan
+{
+
+}
+
+.slogan h1
+{
+    font-weight: lighter;
+    letter-spacing: 5px;
+    display: inline-block;
+}
+
+#party-imgs
+{
+    width: 50%;
+    margin: 0 auto;
+ 
+    
+}
+
+#party-imgs img
+{
+    height: 400px;
+}
+
+
+section
+{
+    min-height: 100vh;
+}
+
+section h2
+{
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+}
+
+section p
+{
+    text-align: justify;
+}
+
+section .member
+{
+      display: inline-block;
+        margin-right:25px;
+  
+}
+
+section .img-wrapper
+{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid white;
+}
+
+section .member a
+{
+    color: white;
+}
+
+section .member i
+{
+    font-size: 1.5rem;
+    
+}
+

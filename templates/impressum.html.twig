@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+{% block title %}Impressum{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/impressum.css") }}">
+{% endblock %}
+
+{% block body %}
+    <main style="background-image: url({{ asset("img/impressum_bg.jpg") }})">
+        {% include "global_elements/nav.html.twig" %}
+        <div class="container mt-5">
+            <div class="bg-light text-dark p-5">
+                <h1>Impressum</h1>
+
+                <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
+                <p>Anton Hauffe<br />
+                    Falkstra&szlig;e, 20<br />
+                    99423 Weimar</p>
+
+                <h2>Kontakt</h2>
+                <p>Telefon: 015226615834<br />
+                    E-Mail: antonhauffe2703@gmail.com</p>
+
+                <p>Quelle: <a href="https://www.e-recht24.de">e-recht24.de</a></p>
+            </div>
+        </div>
+    </main>
+    {% include "global_elements/footer.html.twig" %}
+{% endblock %}
