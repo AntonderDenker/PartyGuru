@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/login.css") }}">
+{% endblock %}
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <main style="background-image: url({{ asset("img/login.jpg") }})">
+        {% include "global_elements/nav.html.twig" %}
+        <div class="container">
+            <form method="post" class="needs-validation" novalidate>
+                {% for flashError in app.flashes('verify_email_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                {% endfor %}
+                <div class="form-floating mb-3">
+                    <input type="text" placeholder="Benutzername" class="form-control" id="username" name="username" value="" required>
+                    <label for="username">Benutzername</label>
+                    <div class="invalid-feedback">
+                        Bitte geben Sie einen Benutzernamen an!
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" placeholder="Email" class="form-control" id="email" name="email" value="" required>
+                    <label for="email">Email</label>
+                    <div class="invalid-feedback">
+                        Bitte geben Sie eine gültige Emailadresse an!
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" minlength="6" placeholder="Passwort" class="form-control" id="password" name="password" required>
+                    <label for="password">Passwort</label>
+                    <div class="invalid-feedback">
+                        Bitte geben Sie ein ausreichend langes Passwort an!
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" minlength="6" placeholder="Passwort confirm" class="form-control" id="password-confirm" name="password_confirm" required>
+                    <label for="password-confirm">Passwort bestätigen</label>
+                    <div class="invalid-feedback">
+                        Bitte geben Sie ein ausreichend langes Passwort an!
+                    </div>
+                </div>
+
+                <button class="btn btn-primary mt-3" type="submit">Registrieren</button>
+                {# If you want to control the URL the user is redirected to on success
+        <input type="hidden" name="_target_path" value="/account"/> #}
+            </form>
+        </div>
+    </main>
+    {% include "global_elements/footer.html.twig" %}
+{% endblock %}

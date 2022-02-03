@@ -17,14 +17,6 @@ class MainController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstract
        return $this->render("index.html.twig", []);
     }
 
-    /**
-     * @Route ("/create_party", name="create_party")
-     */
-
-    public function create_party()
-    {
-        return $this->render("create_party.html.twig");
-    }
 
     /**
      * @Route ("/find_party", name="find_party")

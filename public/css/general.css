@@ -1,3 +1,8 @@
+:root
+{
+    --transparent-dark: rgba(0,0,0,0.5);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -14,7 +19,7 @@ header
 
 main
 {
-    height: 100vh;
+    min-height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -46,6 +51,22 @@ main
 .nav-right
 {
     padding: 0 4rem;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a
+{
+    color: white!important;
+}
+
+.user-icon
+{
+
+    font-size: 1.75rem;
+    margin-left: 1.5rem;
+
 }
 
 footer
@@ -62,4 +83,11 @@ footer
 .law a
 {
 color: white;
+}
+
+/* global styles */
+
+.bg-transparent-dark
+{
+    background: rgba(0,0,0,0.5);
 }

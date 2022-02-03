@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/login.css") }}">
+{% endblock %}
+
+{% block body %}
+    <main style="background-image: url({{ asset("img/login.jpg") }})">
+        {% include "global_elements/nav.html.twig" %}
+        <div class="container">
+            <form method="post" class="needs-validation" novalidate>
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <div class="form-floating mb-3">
+                    <input type="text" placeholder="Benutzername" class="form-control" id="username" name="_username" value="{{ last_username }}" required>
+                    <label for="username">Benutzername</label>
+                    <div class="invalid-feedback">
+                        Bitte geben Sie einen Benutzernamen an!
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" minlength="6" placeholder="Passwort" class="form-control" id="password" name="_password" required>
+                    <label for="password">Passwort</label>
+                    <div class="invalid-feedback">
+                        Bitte geben Sie ein ausreichend langes Passwort an!
+                    </div>
+                </div>
+
+                <div class="form-check form-switch">
+                    <input class="form-check-input" name="remember_me_" type="checkbox" role="switch" id="remember_me">
+                    <label class="form-check-label text-light" for="remember_me">Angemeldet bleiben (1 Woche)</label>
+                </div>
+                <div class=" mt-3">
+                    <button class="btn btn-success" type="submit">Anmelden</button>
+                    <a class="btn btn-primary" href="{{ path("app_register") }}">Registrieren</a>
+                </div>
+
+                <input type="hidden" name="_target_path" value="{{ prev_url }}"/>
+            </form>
+        </div>
+    </main>
+    {% include "global_elements/footer.html.twig" %}
+
+{% endblock %}

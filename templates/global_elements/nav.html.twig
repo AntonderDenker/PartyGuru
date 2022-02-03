@@ -10,6 +10,11 @@
 
     <div class="nav-right">
         <a href="{{ path("find_party") }}" class="btn btn-primary">Party finden</a>
-        <a href="{{ path("create_party") }}" class="btn btn-success">Party erstellen</a>
+        <a href="{{ path("create_party") }}" class="btn btn-success" style="margin-left: 0.5rem">Party erstellen</a>
+        {% if app.user %}
+           <a href="{{ path("login") }}"><i class="fas fa-user-shield user-icon"></i></a>
+        {% else %}
+            <a href="{{ path("login") }}" class="btn btn-primary" style="margin-left: 0.5rem">Login</a>
+        {% endif %}
     </div>
 </header>
